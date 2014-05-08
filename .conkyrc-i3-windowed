@@ -1,9 +1,5 @@
 # grandtheftjiujitsu @ ArchLinux Forums
 # weather from NoobsLab - Elune Conky
-# if re-installing; will need to go to Noobslab
-# and reinstall orginal if location different.
-# Backup config file, reinstall per instructions
-# restor config
 
 background no
 update_interval 1
@@ -69,9 +65,9 @@ ${font Sans:bold:size=10}${voffset 15}${color1}Recent Repo Updates
 ${font Sans:size=8}${color2}${rss https://www.archlinux.org/feeds/packages/ 1 item_titles 10}
 ${font Sans:bold:size=10}${voffset 15}${color1}Available Updates
 ${font Sans:size=8}${voffset 5}${color2}${execi 1000 pacman -Qlu}
-##########################################################
-${execi 300 curl -s "http://weather.yahooapis.com/forecastrss?w=2375544&u=f" -o ~/.cache/weather.xml}${image ~/.conky-weather/assets/Elune/right-bar.png -p 302,14 -s 128x572}${image ~/.conky-weather/assets/Elune/shadow-2.png -p 304,20 -s 54x560}
-${font Raleway:weight=Light :size=60}${offset 20}${voffset 30}${color1}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}°
-${font Sans :size=12}${offset 10}${voffset -50}${color1}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "text=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}
-${color2}${font Sans:size=12}${voffset 10}${color2}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1'}°/${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1'}°${color2}${font Sans:size=12}${goto 80}${color2}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2'}°/${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2'}°
+#######################################################################################
+${execi 300 curl -s "http://weather.yahooapis.com/forecastrss?w=2375543&u=f" -o ~/.cache/weather.xml}
+${color1}${font Raleway:weight=Light :size=60}${offset 20}${voffset 30}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}°
+${font Sans:size=12}${offset 10}${voffset -50}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "text=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}
+${font Sans:size=12}${voffset 10}${color2}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1'}°/${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1'}°${goto 100}${font Sans:size=12}${goto 80}${color2}${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2'}°/${execi 300 grep "yweather:forecast" ~/.cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2'}°
 ${color3}${font Sans:size=10}Today${color1}${font Sans:size=10}${goto 80}Tomorrow
