@@ -1,0 +1,88 @@
+# Original Work - http://www.noobslab.com/2012/07/install-conky-two-gadget-in-ubuntulinux.html
+
+# Conky settings #
+background no
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+#imlib_cache_size 0
+
+temperature_unit fahrenheit
+
+# Window specifications #
+own_window_class Conky
+own_window yes
+own_window_type conky
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 350 550
+maximum_width 550
+
+alignment tr
+gap_x -20
+gap_y 22
+
+# Graphics settings #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings #
+use_xft yes
+override_utf8_locale yes
+xftfont Pf Tempesta Five:bold:size=6
+xftalpha 0.8
+uppercase no
+
+temperature_unit fahrenheit
+
+default_color 333333
+color0 6cde4b
+color1 d5d5d5
+color2 1994D1
+color3 1994D1 
+
+# Lua Load  ##${voffset 750}
+lua_load ~/two-noobslab-wgs/.conky/rings-v1.2.1.lua
+lua_draw_hook_pre ring_stats
+
+
+TEXT
+${font Xirod:size=10}${goto 25}${color0}System Info${alignr 145}${font Pf Tempesta Five:bold:size=6}${alignr 145}${color1}${machine}
+${font Pf Tempesta Five:bold:size=6}${goto 85}CPU ${alignr 145}${color1}${cpu}%
+${font Pf Tempesta Five:bold:size=6}${goto 75}RAM${alignr 145}${memperc}% / ${memmax}
+${font Pf Tempesta Five:bold:size=6}${goto 65}Temp${alignr 145}${acpitemp}°F
+${font Pf Tempesta Five:bold:size=6}${goto 55}Uptime${alignr 145}${uptime_short}
+${font Pf Tempesta Five:bold:size=6}${goto 45}Governor${alignr 145}${pre_exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}
+${font Pf Tempesta Five:bold:size=6}${goto 45}I/O Scheduler${alignr 145}${ioscheduler sda}
+${font Xirod:size=10}${alignr 100}${color0}${pre_exec cat /etc/issue.net}${font Pf Tempesta Five:bold:size=6}
+${font Pf Tempesta:bold:size=6}${alignr 100}${color1}${kernel}
+${font Xirod:size=8}${goto 115}${voffset 100}${color0}${time %A} - ${color0}${time %D}
+${font Xirod:size=18}${goto 95}${color1}${time %H}:${time %M}
+${font Xirod:size=10}${alignr 40}${voffset 10}${color0}INTERNET INFO
+${font Pf Tempesta Five:bold:size=6}${goto 100}${color0}Network:  ${color1}${wireless_essid wlan0}
+${font Pf Tempesta Five:bold:size=6}${goto 100}${color0}External IP: ${color1}${execi 3600 wget -O - http://ip.tupeux.com | tail}
+${font Pf Tempesta Five:bold:size=6}${goto 100}${color1}Wfi Dwn:  ${downspeed wlan0} / ${color1}${totaldown wlan0}
+${font Pf Tempesta Five:bold:size=6}${goto 100}Wifi Up:  ${upspeed wlan0} / ${color1}${totalup wlan0}
+${font Pf Tempesta Five:bold:size=6}${goto 100}${color0}Eth0 IP: ${color1}${addr eth0}
+${font PF Tempesta Five:bold:size=6}${goto 100}${color1}Eth0 Dwn:  ${downspeed eth0} / ${color1}${totaldown eth0}
+${font PF Tempesta Five:bold:size=6}${goto 100}Eth0 Up:  ${upspeed eth0} / ${color1}${totalup eth0}
+${font Xirod:size=10}${color0}${alignr 25}${voffset 20}BATERY
+${font Xirod:size=8}${color1}${alignr 25}${color1}${battery BAT0}
+${font Xirod:size=8}${alignr 25}${battery_time BAT0}
+${font Pf Tempesta Five:bold:size=6}${goto 75}${voffset 20}${color0}Root:  ${color1}${fs_used_perc /}% / ${color1}${fs_size /}
+${font Pf Tempesta Five:bold:size=6}${goto 75}${color0}Home:  ${color1}${fs_used_perc /home}% / ${color1}${fs_size /home}
+${font Xirod:size=10}${color0}${goto 65}${voffset 2}HARD DRIVE
