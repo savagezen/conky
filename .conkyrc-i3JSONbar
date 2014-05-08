@@ -1,0 +1,46 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+update_interval 2.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+short_units yes
+
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface. 
+if_up_strictness address
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+temperature_unit fahrenheit
+
+
+TEXT
+##################################
+${execi 300 curl -s "http://weather.yahooapis.com/forecastrss?w=2375544&u=f" -o ~/.cache/weather.xml}
+${execpi 14400 kalu -m > /tmp/Updates}
+
+ [{ "full_text" : "[${time %H} : ${time %M}] ${time %a}, ${time %b} ${time %d} [${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}°F]" , "color" : "\#3dbcd9" },
+  { "full_text" : "RAM: ${memperc}% CPU: ${cpu}% [${acpitemp}°F] " , "color" : "\#d23fe4" },
+  { "full_text" : "Wifi:${downspeed wlp3s0} Eth: ${downspeed enp5s0}" , "color" : "\#ff3333" },
+  { "full_text" : "Disk: ${fs_used /} [${fs_used_perc /}%] ${exec uname -r}" , "color" : "\#006be5" },
+  { "full_text" : "${execp cat /tmp/Updates |grep "updates available" |head -c 20} ${execp cat /tmp/Updates |grep "AUR"}" , "color" : "\#ffffff" },
+  { "full_text" : "Uptime: ${uptime_short}" , "color" : "\#e4d23f" },
+  { "full_text" : "Batt: ${battery_percent}%" ,  "color" : 
+    ${if_match ${battery_percent}<40}"\#fbfb24" ${battery_percent}<15}"\#d81e23"${else}"\#51e43f"${endif}
+}],
