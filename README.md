@@ -13,12 +13,12 @@ grandtheftjiujitsu
 ### Screenshots
 > Enjoy!
 > #### 123-NoobsLab(Arch)
-> ![Picture](https://github.com/grandtheftjiujitsu/Conky/blob/master/123-noobslab.jpg)
+> ![Picture](https://raw.github.com/grandtheftjiujitsu/Conky/blob/master/123-noobslab.jpg)
 > #### Conky_Grey (Arch)
-> ![Picture](https://github.com/grandtheftjiujitsu/Conky/blob/master/conky_grey.jpg)
+> ![Picture](https://raw.github.com/grandtheftjiujitsu/Conky/blob/master/conky_grey.jpg)
 > #### i3-Conky-Windowed (Arch)
-> ![Picture](https://github.com/grandtheftjiujitsu/Conky/blob/master/i3-conky-windowed.jpg)
+> ![Picture](https://raw.github.com/grandtheftjiujitsu/Conky/blob/master/i3-conky-windowed.jpg)
 > #### 123-NoobsLab-Mint
-> ![Picture](https://github.com/grandtheftjiujitsu/Conky/blob/master/123-noobslab-mint.jpg)
+> ![Picture](https://raw.github.com/grandtheftjiujitsu/Conky/blob/master/123-noobslab-mint.jpg)
 > #### Two-NoobsLab (Mint)
-![Picture](https://github.com/grandtheftjiujitsu/Conky/blob/master/two-noobslab-conky.jpg)
+![Picture](https://raw.github.com/grandtheftjiujitsu/Conky/blob/master/two-noobslab-conky.jpg)
