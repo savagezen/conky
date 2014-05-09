@@ -1,7 +1,8 @@
 Conky Configurations
 ====================
 
-grandtheftjiujitsu
+by grandtheftjiujitsu
+
 ---------------------
 
 ### Description
@@ -12,6 +13,8 @@ grandtheftjiujitsu
 
 ### Screenshots
 > Enjoy!
+> #### i3 JSON / Conky Bar - 5/8/14
+> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140508.png)
 > #### 123-NoobsLab(Arch)
 > ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/123-noobslab.jpg)
 > #### Conky_Grey (Arch)

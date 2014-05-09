@@ -35,14 +35,14 @@ TEXT
 ${execi 300 curl -s "http://weather.yahooapis.com/forecastrss?w=2375544&u=f" -o ~/.cache/weather.xml}
 ${execpi 14400 kalu -m > /tmp/Updates}
 
- [{ "full_text" : "[${time %H} : ${time %M}] ${time %a}, ${time %b} ${time %d} [${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}°F]" , "color" : "\#3dbcd9" },
-  { "full_text" : "RAM: ${memperc}% CPU: ${cpu}% [${acpitemp}°F] " , "color" : "\#d23fe4" },
-  { "full_text" : "Wifi:${downspeed wlp3s0} Eth: ${downspeed enp5s0}" , "color" : "\#ff3333" },
-  { "full_text" : "Root: ${fs_used /}" , "color" : "\#006be5" },
-  { "full_text" : "Home: ${fs_used /home}" , "color" : "\#006be5" },
-  { "full_text" : "Kernel: ${exec uname -r}" , "color" : "\#006be5" },
+ [{ "full_text" : "[${time %H} : ${time %M}] ${time %a}, ${time %b} ${time %d} [${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}°F]" , "color" : "\#ffffff" },
+  { "full_text" : "RAM: ${memperc}% CPU: ${cpu}% [${acpitemp}°F] " , "color" : "\#760000" },
+  { "full_text" : "Wifi:${downspeed wlp3s0} Eth: ${downspeed enp5s0}" , "color" : "\#620062" },
+  { "full_text" : "Root: ${fs_used /}" , "color" : "\#0d1318" },
+  { "full_text" : "Home: ${fs_used /home}" , "color" : "\#0d1318" },
+  { "full_text" : "Kernel: ${exec uname -r}" , "color" : "\#0d1318" },
   { "full_text" : "${execp cat /tmp/Updates |grep "updates available" |head -c 20} ${execp cat /tmp/Updates |grep "AUR"}" , "color" : "\#ffffff" },
   { "full_text" : "Uptime: ${uptime_short}" , "color" : "\#e4d23f" },
   { "full_text" : "Batt: ${battery_percent}%" ,  "color" : 
-    ${if_match ${battery_percent}<40}"\#fbfb24" ${battery_percent}<15}"\#d81e23"${else}"\#51e43f"${endif}
+    ${if_match ${battery_percent}<40}"\#007600" ${battery_percent}<15}"\#d81e23"${else}"\#51e43f"${endif}
 }],
