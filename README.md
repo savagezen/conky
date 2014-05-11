@@ -14,7 +14,8 @@ by grandtheftjiujitsu
 ### Screenshots
 > Enjoy!
 > #### i3 JSON / Conky Bar - 5/10/14
-> ![Picture](https://raw/githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140510.png
+> 
+![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140510.png)
 > #### i3 JSON / Conky Bar - 5/8/14
 > ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140508.png)
 > #### 123-NoobsLab(Arch)
