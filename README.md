@@ -13,7 +13,7 @@ by grandtheftjiujitsu
 
 ### Screenshots
 * i3 JSON / Conky Bar (8/23/14)
->![Picture](https:////raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140823.png)
+> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140823.png)
 
 * i3 JSON / Conky Bar (7/25/14)
 > ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140725.png)
