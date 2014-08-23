@@ -12,6 +12,9 @@ by grandtheftjiujitsu
 > Many of these themes are modified version of those found at [NoobsLab](http://www.noobslab.com/2012/07/conky-collection-for-ubuntulinux.html).  In such cases much of the original documentation has been left intact and modified on my behalf. 
 
 ### Screenshots
+* i3 JSON / Conky Bar (8/23/14)
+>![Picture](https:////raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140823.png)
+
 * i3 JSON / Conky Bar (7/25/14)
 > ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140725.png)
 
