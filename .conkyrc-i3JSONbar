@@ -39,13 +39,14 @@ TEXT
 ${execpi 1800 curl -s "http://weather.yahooapis.com/forecastrss?w=2375544&u=f" -o ~/.cache/weather.xml}
 ${execpi 14400 kalu -m > /tmp/Updates}
 
-[{ "full_text" : " < ${execp cmus-remote -Q | grep "tag artist" | tail -c +12} : ${execi 60 cmus-remote -Q | grep "tag title" | tail -c +11} >" , "color" : "\#e756ae" },
+[{ "full_text" : " < ${execp cmus-remote -Q | grep "tag artist" | tail -c +12} : ${execi 60 cmus-remote -Q | grep "tag title" | tail -c +11} >" , "color" : "\#ffffff" },
   { "full_text" : "[${time %H} : ${time %M}] ${time %a}, ${time %b} ${time %d} [${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}°F]" , "color" : "\#00c5ec" },
-  { "full_text" : "RAM: ${memperc}% CPU: ${cpu}% [${acpitemp}°F]" , "color" : "\#e756ae" },
-  { "full_text" : "eUP:${upspeed enp5s0} eDWN:${downspeed enp5s0} | wUP:${upspeed wlp3s0} wDWN:${downspeed wlp3s0}" , "color" : "\#00c5ec" },
-  { "full_text" : "Gov: ${exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor} | I/O: ${ioscheduler sda} | Entropy: ${entropy_perc}" , "color" : "\#e756ae" },
-  { "full_text" : "${execp cat /tmp/Updates |grep "updates available" |head -c 20} ${execp cat /tmp/Updates |grep "AUR"}" , "color" : "\#51e43f" },
-  { "full_text" : "Bright: ${execp xbacklight -get | head -c 3} | Vol: ${execp cmus-remote -Q | tail -c 3}" , "color" : "\#00c5ec" },
+  { "full_text" : "RAM: ${memperc}% CPU: ${cpu}% [${acpitemp}°F]" , "color" : "\#ffffff" },
+  { "full_text" : "root: ${fs_used /} [${fs_used_perc /}%] home: ${fs_used /home} [${fs_used_perc /home}%]" , "color" : "\#00c5ec" },
+  { "full_text" : "eDWN:${downspeed enp5s0} | wDWN:${downspeed wlp3s0}" , "color" : "\#ffffff" },
+  { "full_text" : "Kernel: ${exec uname -r} | Gov: ${exec cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor} | I/O: ${ioscheduler sda}" , "color" : "\#00c5ec" },
+  { "full_text" : "${execp cat /tmp/Updates |grep "updates available" |head -c 20} ${execp cat /tmp/Updates |grep "AUR"}" , "color" : "\#ff2015" },
+  { "full_text" : "Bright: ${execp xbacklight -get | head -c 3} | Vol: ${execp cmus-remote -Q | tail -c 3}" , "color" : "\#ffffff" },
   { "full_text" : "Batt: ${battery_percent}% ${battery_time}" ,  "color" : 
-    ${if_match ${battery_percent}<15}"\#e4f3f51"${else}"\#51e43f"${endif}
+    ${if_match ${battery_percent}<15}"\#ff2015"${else}"\#51e43f"${endif}
 }],
