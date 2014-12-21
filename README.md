@@ -14,7 +14,7 @@ by grandtheftjiujitsu
 
 ### Screenshots
 * Dwm / Conky + Dzen / Zsh
-> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/dwm-dzen.thumb.png)
+> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/dwm-dzen.png)
 
 * i3 JSON / Conky Bar (8/23/14)
 > ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140823.png)
