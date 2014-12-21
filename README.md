@@ -1,3 +1,4 @@
+
 Conky Configurations
 ====================
 
@@ -12,6 +13,9 @@ by grandtheftjiujitsu
 > Many of these themes are modified version of those found at [NoobsLab](http://www.noobslab.com/2012/07/conky-collection-for-ubuntulinux.html).  In such cases much of the original documentation has been left intact and modified on my behalf. 
 
 ### Screenshots
+* Dwm / Conky + Dzen / Zsh
+> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/dwm-dzen.thumb.png)
+
 * i3 JSON / Conky Bar (8/23/14)
 > ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140823.png)
 
