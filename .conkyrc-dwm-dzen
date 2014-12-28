@@ -29,7 +29,7 @@ ${execpi 14400 kalu -m > /tmp/Updates}
 
 ^fg(\#ff535a)eDWN ${downspeed enp5s0}#
  ^fg()| ^fg(\#00b0d8)wDWN ${downspeed wlp3s0}#
- ^fg()| ^fg(\#ff535a)RAM (${memperc}%)#
+ ^fg()| ^fg(\#ff535a)RAM ${memperc}%#
  ^fg()| ^fg(\#00b0d8)CPU ${cpu}% (${acpitemp}'F)#
  ^fg()| ^fg(\#ff535a)Root ${fs_used /} / ${fs_size /} (${fs_used_perc /}%)#
  ^fg()| ^fg(\#00b0d8)Home ${fs_used /home} / ${fs_size /home} (${fs_used_perc /home}%)#
