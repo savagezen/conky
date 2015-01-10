@@ -25,17 +25,18 @@ temperature_unit fahrenheit
 TEXT
 ##################################
 ${execpi 1800 curl -s "http://weather.yahooapis.com/forecastrss?w=2375544&u=f" -o ~/.cache/weather.xml}
-${execpi 14400 kalu -m > /tmp/Updates}
+${execi 14400 ~/Scripts/update-check.sh}
 
 ^fg(\#ff535a)eDWN ${downspeed enp5s0}#
  ^fg()| ^fg(\#00b0d8)wDWN ${downspeed wlp3s0}#
  ^fg()| ^fg(\#ff535a)RAM ${memperc}%#
  ^fg()| ^fg(\#00b0d8)CPU ${cpu}% (${acpitemp}'F)#
- ^fg()| ^fg(\#ff535a)Root ${fs_used /} / ${fs_size /} (${fs_used_perc /}%)#
- ^fg()| ^fg(\#00b0d8)Home ${fs_used /home} / ${fs_size /home} (${fs_used_perc /home}%)#
- ^fg()| ^fg(\#ff535a)${execp cmus-remote -Q | grep "tag artist" | tail -c +12} : ${execi 60 cmus-remote -Q | grep "tag title" | tail -c +11}# 
- ^fg()| ^fg(\#00b0d8)Vol ${execp cmus-remote -Q | tail -c 3}#
- ^fg()| ^fg(\#ff535a)Bright ${execp xbacklight -get | head -c 3}# 
- ^fg()| ^fg(\#00b0d8)Batt ${battery_percent}%#
- ^fg()| ^fg(\#5adb3c)${execp cat /tmp/Updates |grep "updates available" |head -c 20} ${execp cat /tmp/Updates |grep "AUR"}#
+ ^fg()| ^fg(\#ff535a)Root ${fs_used /} (${fs_used_perc /}%)#
+ ^fg()| ^fg(\#00b0d8)Var ${fs_used /var} (${fs_used_perc /var}%)#
+ ^fg()| ^fg(\#ff535a)Home ${fs_used /home} (${fs_used_perc /home}%)#
+ ^fg()| ^fg(\#00b0d8)${execp cmus-remote -Q | grep "tag artist" | tail -c +12} : ${execi 60 cmus-remote -Q | grep "tag title" | tail -c +11}# 
+ ^fg()| ^fg(\#ff535a)Vol ${execp cmus-remote -Q | tail -c 3}#
+ ^fg()| ^fg(\#00b0d8)Bright ${execp xbacklight -get | head -c 3}# 
+ ^fg()| ^fg(\#ff535a)Batt ${battery_percent}%#
+ ^fg()| ^fg(\#5adb3c)Updates: ${exec cat /tmp/off.updates} Off ${exec cat /tmp/aur.updates} AUR#
  ^fg()| ${time %T} (${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}'F)
