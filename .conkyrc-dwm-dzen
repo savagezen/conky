@@ -31,12 +31,12 @@ ${execi 14400 ~/Scripts/update-check.sh}
  ^fg()| ^fg(\#00b0d8)wDWN ${downspeed wlp3s0}#
  ^fg()| ^fg(\#ff535a)RAM ${memperc}%#
  ^fg()| ^fg(\#00b0d8)CPU ${cpu}% (${acpitemp}'F)#
- ^fg()| ^fg(\#ff535a)Root ${fs_used /} (${fs_used_perc /}%)#
- ^fg()| ^fg(\#00b0d8)Var ${fs_used /var} (${fs_used_perc /var}%)#
- ^fg()| ^fg(\#ff535a)Home ${fs_used /home} (${fs_used_perc /home}%)#
+ ^fg()| ^fg(\#ff535a)Root ${fs_used_perc /}%#
+ ^fg()| ^fg(\#00b0d8)Var ${fs_used_perc /var}%#
+ ^fg()| ^fg(\#ff535a)Home ${fs_used_perc /home}%#
  ^fg()| ^fg(\#00b0d8)${execp cmus-remote -Q | grep "tag artist" | tail -c +12} : ${execi 60 cmus-remote -Q | grep "tag title" | tail -c +11}# 
- ^fg()| ^fg(\#ff535a)Vol ${execp cmus-remote -Q | tail -c 3}#
+ ^fg()| ^fg(\#ff535a)Vol ${execp cmus-remote -Q | tail -c 4}#
  ^fg()| ^fg(\#00b0d8)Bright ${execp xbacklight -get | head -c 3}# 
  ^fg()| ^fg(\#ff535a)Batt ${battery_percent}%#
- ^fg()| ^fg(\#5adb3c)Updates: ${exec cat /tmp/off.updates} Off ${exec cat /tmp/aur.updates} AUR#
- ^fg()| ${time %T} (${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}'F)
+ ^fg()| ^fg(\#00b0d8)${execp cat /tmp/off.updates | wc -l} Off ${execp cat /tmp/aur.updates | wc -l} AUR Updates#
+ ^fg()| ${time %a %b %d %H:%M} (${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}'F)
