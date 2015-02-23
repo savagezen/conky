@@ -28,7 +28,7 @@ ${execpi 1800 curl -s "http://weather.yahooapis.com/forecastrss?w=2375544&u=f" -
 ${execi 14400 ~/Scripts/update-check.sh}
 
 ^fg(\#ff535a)eDWN ${downspeed enp5s0}#
- ^fg()| ^fg(\#00b0d8)wDWN ${downspeed wlp3s0}#
+ ^fg()| ^fg(\#00b0d8)wDWN ${downspeed wlp3s0} @ ${wireless_essid wlp3s0}#
  ^fg()| ^fg(\#ff535a)RAM ${memperc}%#
  ^fg()| ^fg(\#00b0d8)CPU ${cpu}% (${acpitemp}'F)#
  ^fg()| ^fg(\#ff535a)Root ${fs_used_perc /}%#
