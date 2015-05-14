@@ -25,7 +25,8 @@ temperature_unit fahrenheit
 TEXT
 ##################################
 ${execpi 1800 curl -s "http://weather.yahooapis.com/forecastrss?w=2375544&u=f" -o ~/.cache/weather.xml}
-${execi 14400 ~/Scripts/update-check.sh}
+${execpi 14400 checkupdate > /tmp/off.updates}
+${execi 7200 ~/Scripts/aur-update-check.sh}
 
 ^fg(\#ff535a)eDWN ${downspeed enp5s0}#
  ^fg()| ^fg(\#00b0d8)wDWN ${downspeed wlp3s0} @ ${wireless_essid wlp3s0}#
