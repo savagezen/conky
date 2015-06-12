@@ -12,7 +12,10 @@ by grandtheftjiujitsu
 ### Credits
 > Many of these themes are modified version of those found at [NoobsLab](http://www.noobslab.com/2012/07/conky-collection-for-ubuntulinux.html).  In such cases much of the original documentation has been left intact and modified on my behalf. 
 
-### Screenshots
+### Screenshots & Packages
+* [Spider-Man Themed Combo Set](https://github.com/grandtheftjiujitsu/Configs/blob/master/Spider-Man-Combo.md)
+![Picture](https://lh6.googleusercontent.com/-d46fv7uZhlU/VJcxfALM3MI/AAAAAAAAChY/xJ24HdwDIkM/w542-h305-no/2014-12-21-153917_1920x1080_scrot.png)
+
 * Dwm / Conky + Dzen / Zsh
 > ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/dwm-dzen.png)
 
