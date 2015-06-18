@@ -1,11 +1,12 @@
 out_to_x no
 out_to_console yes
 background no
+use_spacer none
 
 update_interval 0.5
 #  in seconds
 
-total_run_times 0 
+total_run_times 0
 #  0 = run forever
 
 use_spacer none
@@ -15,32 +16,24 @@ short_units yes
 override_utf8_locale no
 temperature_unit fahrenheit
 
-# ~/Scripts/dzconky
+# ~/scripts/dzconky
 # FG	ffffff	^fg()
 # BG	000000
 
-# Other FGs	^fg(\#xxxxxx)
-# red	ff535a
-# blue	00b0d8
-# green 5adb3c
+# Other FGs		^fg(\#xxxxxx)
+# red			ff535a
+# ice blue / cyan	00b0d8
+# lime green		03fa23
+# hot pink / magenta	ff69b4
 
 TEXT
 ##################################
+${execpi 300 curl -o /tmp/weather.xml http://w1.weather.gov/xml/current_obs/KCTJ.xml}
 ${execpi 1800 curl -s "http://weather.yahooapis.com/forecastrss?w=2375544&u=f" -o ~/.cache/weather.xml}
-${execpi 14400 checkupdate > /tmp/off.updates}
-${execi 7200 ~/Scripts/aur-update-check.sh}
+${execi 7200 ~/scripts/aur-update-check.sh}
+${execi 14400 checkupdates > /tmp/off.updates}
 
-^fg()^fg(\#00b0d8)${execp cmus-remote -Q | grep "tag artist" | tail -c +12} : ${execi 60 cmus-remote -Q | grep "tag title" | tail -c +11}# 
- ^fg()| ^fg(\#ff535a)eDWN ${downspeed enp3s0}#
- ^fg()| ^fg(\#00b0d8)CPU (${acpitemp}'C) ${cpu cpu1}% ${cpu cpu2}% RAM ${memperc}%#
- ^fg()| ^fg(\#ff535a)Boot ${fs_used_perc /boot}% (${fs_used /boot}) Root ${fs_used_perc /}% (${fs_used /})#
- ^fg()| ^fg(\#00b0d8)${execp cat /tmp/off.updates | wc -l} Off ${execp cat /tmp/aur.updates | wc -l} AUR Updates#
- ^fg()| ^fg(\#ff535a)${time %a %b %d %H:%M} (${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}'F)
-
-#######################
-# From Laptop Version #
-# ^fg()| ^fg(\#00b0d8)wDWN ${downspeed wlp3s0} @ ${wireless_essid wlp3s0}#
-# ^fg()| ^fg(\#ff535a)Vol ${execp cmus-remote -Q | tail -c 4}#
-# ^fg()| ^fg(\#00b0d8)Bright ${execp xbacklight -get | head -c 3}# 
-# ^fg()| ^fg(\#ff535a)Batt ${battery_percent}%#
-
+^fg(\#ffffff)^ca(1,~/scripts/popup_media.sh)^i($HOME/.icons/xbm/note.xbm) ${execp cmus-remote -Q | grep "tag artist" | tail -c +12} : ${exec cmus-remote -Q | grep "tag title" | tail -c +11}^ca()#
+ ^fg(\#00b0d8)| ^fg(\#ff69b4)^ca(1,~/scripts/popup_packages.sh)^i($HOME/.icons/xbm/pacman.xbm) ${exec cat /tmp/off.updates | wc -l} Off ${exec cat /tmp/aur.updates | wc -l} AUR^ca()#
+ ^fg(\#00b0d8)| ^fg(\#ffffff)^ca(1,~/scripts/popup_sysinfo.sh)^i($HOME/.icons/xbm/mem.xbm) ${memperc}% ^i($HOME/.icons/xbm/cpu.xbm) (${acpitemp}'C) ${cpu cpu0}%^ca()#
+ ^fg(\#00b0d8)| ^fg(\#ff69b4)^ca(1,~/scripts/popup_sysinfo.sh)^i($HOME/.icons/xbm/clock.xbm) ${time %H:%M} ^i($HOME/.icons/xbm/temp.xbm) ${exec cat /tmp/weather.xml | grep temperature | head -c -31 | tail -c 7}^ca()
