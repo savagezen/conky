@@ -3,4 +3,4 @@
 FG='#ffffff'
 BG='#000000'
 FONT=-misc-*-*-*-*--14-*-*-*-*-*-iso8859-1
-conky | dzen2 -e - -h '16' -w '1460' -ta r -x '900' -fg $FG -bg $BG -fn $FONT &
+conky | dzen2 -e - -h '16' -w '1350' -ta r -x '900' -y '1066' -fg $FG -bg $BG -fn $FONT &
