@@ -25,6 +25,10 @@ temperature_unit fahrenheit
 # ice blue / cyan	00b0d8
 # lime green		5adb3c
 # hot pink / magenta	ff69b4
+# dwm_normbgcolor	222222
+# dwm_normfgcolor	bbbbbb
+# dwm_selbgcolor	005577
+# dwm_selfgcolor	eeeeee
 
 TEXT
 ##################################
@@ -33,7 +37,6 @@ ${execpi 1800 curl -s "http://weather.yahooapis.com/forecastrss?w=2375544&u=f" -
 ${execi 7200 ~/scripts/aur-update-check.sh}
 ${execi 14400 checkupdates > /tmp/off.updates}
 
-^fg(\#ffffff)^ca(1,~/scripts/popup_media.sh)^i($HOME/.icons/xbm/note.xbm) ${execp cmus-remote -Q | grep "tag artist" | tail -c +12} : ${exec cmus-remote -Q | grep "tag title" | tail -c +11}^ca()#
- ^fg(\#00b0d8)| ^fg(\#5adb3c)^ca(1,~/scripts/popup_packages.sh)^i($HOME/.icons/xbm/pacman.xbm) ${exec cat /tmp/off.updates | wc -l} Off ${exec cat /tmp/aur.updates | wc -l} AUR^ca()#
- ^fg(\#00b0d8)| ^fg(\#ffffff)^ca(1,~/scripts/popup_sysinfo.sh)^i($HOME/.icons/xbm/mem.xbm) ${memperc}% ^i($HOME/.icons/xbm/cpu.xbm) (${acpitemp}'C) ${cpu cpu0}%^ca()#
- ^fg(\#00b0d8)| ^fg(\#5adb3c)^ca(1,~/scripts/popup_cal.sh)^i($HOME/.icons/xbm/clock.xbm) ${time %H:%M} ^i($HOME/.icons/xbm/temp.xbm) ${exec cat /tmp/weather.xml | grep temperature | head -c -31 | tail -c 7}^ca()
+^ca(1,~/scripts/popup_packages.sh)^i($HOME/.icons/xbm/pacman.xbm) ${exec cat /tmp/off.updates | wc -l} Off ${exec cat /tmp/aur.updates | wc -l} AUR^ca()#
+ | ^ca(1,~/scripts/popup_sysinfo.sh)^i($HOME/.icons/xbm/mem.xbm) ${memperc}% ^i($HOME/.icons/xbm/cpu.xbm) (${acpitemp}'C) ${cpu cpu0}%^ca()#
+ ^bg(\#222222)^fg(\#bbbbbb)^ca(1,~/scripts/popup_cal.sh)^i($HOME/.icons/xbm/clock.xbm) ${time %H:%M} ^i($HOME/.icons/xbm/temp.xbm) ${exec cat /tmp/weather.xml | grep temperature | head -c -31 | tail -c 7}^ca()
