@@ -37,6 +37,6 @@ ${execpi 1800 curl -s "http://weather.yahooapis.com/forecastrss?w=2375544&u=f" -
 ${execi 7200 ~/scripts/aur-update-check.sh}
 ${execi 14400 checkupdates > /tmp/off.updates}
 
-^ca(1,~/scripts/popup_packages.sh)^i($HOME/.icons/xbm/pacman.xbm) ${exec cat /tmp/off.updates | wc -l} Off ${exec cat /tmp/aur.updates | wc -l} AUR^ca()#
- | ^ca(1,~/scripts/popup_sysinfo.sh)^i($HOME/.icons/xbm/mem.xbm) ${memperc}% ^i($HOME/.icons/xbm/cpu.xbm) (${acpitemp}'C) ${cpu cpu0}%^ca()#
- ^bg(\#222222)^fg(\#bbbbbb)^ca(1,~/scripts/popup_cal.sh)^i($HOME/.icons/xbm/clock.xbm) ${time %H:%M} ^i($HOME/.icons/xbm/temp.xbm) ${exec cat /tmp/weather.xml | grep temperature | head -c -31 | tail -c 7}^ca()
+^ca(1,~/scripts/popup_packages.sh)${exec cat /tmp/off.updates | wc -l} Off ${exec cat /tmp/aur.updates | wc -l} AUR^ca()#
+ | ^ca(1,~/scripts/popup_sysinfo.sh)MEM ${memperc}% | CPU (${acpitemp}'C) ${cpu cpu0}% | BATT ${battery_short BATC}^ca()#
+ ^bg(\#222222)^fg(\#bbbbbb)^ca(1,~/scripts/popup_cal.sh)${time %H:%M} ${exec cat /tmp/weather.xml | grep temperature | head -c -31 | tail -c 7}'F ^ca()
