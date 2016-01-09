@@ -30,6 +30,9 @@ temperature_unit fahrenheit
 # dwm_selbgcolor	005577
 # dwm_selfgcolor	eeeeee
 
+#${if_match ${battery_percent BAT0} <= 19}${color red}Battery: ${battery}${else}${color2}${battery}${endif}
+#BATT ${battery_short BATC}
+
 TEXT
 ##################################
 ${execpi 300 curl -o /tmp/weather.xml http://w1.weather.gov/xml/current_obs/KCTJ.xml}
@@ -38,5 +41,6 @@ ${execi 7200 ~/scripts/aur-update-check.sh}
 ${execi 14400 checkupdates > /tmp/off.updates}
 
 ^ca(1,~/scripts/popup_packages.sh)${exec cat /tmp/off.updates | wc -l} Off ${exec cat /tmp/aur.updates | wc -l} AUR^ca()#
- | ^ca(1,~/scripts/popup_sysinfo.sh)MEM ${memperc}% | CPU (${acpitemp}'C) ${cpu cpu0}% | BATT ${battery_short BATC}^ca()#
+ | ^ca(1,~/scripts/popup_sysinfo.sh)MEM ${memperc}% | CPU (${acpitemp}'C) ${cpu cpu0}%#
+ | ${if_match ${battery_percent BATC} <= 20}${color red}BATT ${battery_short BATC}${else}BATT ${battery_short BATC}${endif}^ca()#
  ^bg(\#222222)^fg(\#bbbbbb)^ca(1,~/scripts/popup_cal.sh)${time %H:%M} ${exec cat /tmp/weather.xml | grep temperature | head -c -31 | tail -c 7}'F ^ca()
