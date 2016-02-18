@@ -16,22 +16,11 @@ short_units yes
 override_utf8_locale no
 temperature_unit fahrenheit
 
-# ~/scripts/dzconky
-# FG	ffffff	^fg()
-# BG	000000
-
 # Other FGs		^fg(\#xxxxxx)
 # red			ff535a
 # ice blue / cyan	00b0d8
 # lime green		5adb3c
 # hot pink / magenta	ff69b4
-# dwm_normbgcolor	222222
-# dwm_normfgcolor	bbbbbb
-# dwm_selbgcolor	005577
-# dwm_selfgcolor	eeeeee
-
-#${if_match ${battery_percent BAT0} <= 19}${color red}Battery: ${battery}${else}${color2}${battery}${endif}
-#BATT ${battery_short BATC}
 
 TEXT
 ##################################
@@ -43,5 +32,5 @@ ${execi 14400 checkupdates > /tmp/off.updates}
 ^ca(1,~/scripts/popup_packages.sh)${exec cat /tmp/off.updates | wc -l} Off ${exec cat /tmp/aur.updates | wc -l} AUR^ca()#
  | ^ca(1,~/scripts/popup_sysinfo.sh)MEM ${if_match ${memperc} >= 60}^fg(\#ff535a)${blink ${memperc}%}^fg(\#eeeeee)${else}${memperc}%${endif}#
  | CPU (${if_match ${acpitemp} >= 170}^fg(\#ff535a)${blink ${acpitemp}'F}^fg(\#eeeeee)${else}${acpitemp}'F${endif}) ${cpu cpu0}%^ca()#
- ^bg(\#222222)^fg(\#bbbbbb)^ca(1,~/scripts/popup_cal.sh)${time %H:%M}#
+ | ^ca(1,~/scripts/popup_cal.sh)${time %H:%M}#
  (${if_match ${battery_percent BATC} <= 10}^fg(\#ff535a)${blink ${battery_short BATC}}^fg(\#eeeeee)${else}${battery_short BATC}${endif})^ca()
