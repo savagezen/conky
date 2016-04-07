@@ -3,4 +3,6 @@
 FG='#eeeeee'
 BG='#005577'
 FONT=-misc-*-*-*-*--14-*-*-*-*-*-iso8859-1
-conky | dzen2 -e - -h '16' -w '1350' -ta r -x '900' -y '0' -fg $FG -bg $BG -fn $FONT &
+
+sleep 3 &&
+conky | dzen2 -e - -h '16' -w '1100' -ta r -x '1125' -y '0' -fg $FG -bg $BG -fn $FONT &
