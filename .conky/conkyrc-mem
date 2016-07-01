@@ -1,0 +1,29 @@
+out_to_x no
+out_to_console yes
+background no
+use_spacer none
+
+total_run_times 1
+#  0 = run forever
+
+use_spacer none
+#  right, left, none
+
+short_units yes
+override_utf8_locale no
+temperature_unit fahrenheit
+
+TEXT
+##################################
+
+ Swap: ${swap} / ${swapmax} (${swapperc}%)
+ Memory: ${mem} / ${memmax} (${memperc}%)
+  Free:     ${memfree}
+  Cached:   ${cached}
+  Buffered: ${buffers}
+ ------------------------
+ ${top_mem name 1} ${top_mem pid 1} ${top_mem mem 1}%
+ ${top_mem name 2} ${top_mem pid 2} ${top_mem mem 2}%
+ ${top_mem name 3} ${top_mem pid 3} ${top_mem mem 3}%
+ ${top_mem name 4} ${top_mem pid 4} ${top_mem mem 4}%
+ ${top_mem name 5} ${top_mem pid 5} ${top_mem mem 5}%

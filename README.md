@@ -2,46 +2,15 @@
 Conky Configurations
 ====================
 
-by grandtheftjiujitsu
+by gtbjj
 
 ---------------------
 
 ### Description
-> Here you will find my new and old conky configurations.  In some cases they are distro specific (e.g.: Mint / Arch) and might require some minor changes.  These configurations also reflect specific interfaces.  For example, GUI / DE or CLI / WM.
+> New and old conky configurations for the sharing!  Currently, I use *dwm* and many conky(s) and configurations.  Those are actively maintained in [.conky](.conky).  Previously, I've used [i3](i3) and assorted desktop environments (see [de](de)).
+
+### Screenshots
+> [Public Google Drive Folder](https://drive.google.com/folderview?id=0B2RH_BSaD6YPY1dZR0x1S2QxZ1U&usp=sharing)
 
 ### Credits
-> Many of these themes are modified version of those found at [NoobsLab](http://www.noobslab.com/2012/07/conky-collection-for-ubuntulinux.html).  In such cases much of the original documentation has been left intact and modified on my behalf. 
-
-### Screenshots & Packages
-* [Spider-Man Themed Combo Set](https://github.com/grandtheftjiujitsu/Configs/blob/master/Spider-Man-Combo.md)
-![Picture](https://lh6.googleusercontent.com/-d46fv7uZhlU/VJcxfALM3MI/AAAAAAAAChY/xJ24HdwDIkM/w542-h305-no/2014-12-21-153917_1920x1080_scrot.png)
-
-* Dwm / Conky + Dzen / Zsh
-> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/dwm-dzen.png)
-
-* i3 JSON / Conky Bar (8/23/14)
-> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140823.png)
-
-* i3 JSON / Conky Bar (7/25/14)
-> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140725.png)
-
-* i3 JSON / Conky Bar (5/10/14)
-> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140510.png)
-
-* i3 JSON / Conky Bar - 5/8/14
-> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3JSONbar-20140508.png)
-
-* 123-NoobsLab(Arch)
-> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/123-noobslab.jpg)
-
-* Conky_Grey (Arch)
-> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/conky_grey.jpg)
-
-* i3-Conky-Windowed (Arch)
-> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/i3-conky-windowed.jpg)
-
-* 123-NoobsLab-Mint
-> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/123-noobslab-mint.jpg)
-
-* Two-NoobsLab (Mint)
-> ![Picture](https://raw.githubusercontent.com/grandtheftjiujitsu/Conky/master/two-noobslab-conky.jpg)
+> Many of the [de](de) configs are variants of the originals found at [NoobsLab](http://www.noobslab.com/2012/07/conky-collection-for-ubuntulinux.html).  In such cases much of the original documentation has been left intact and modified on my behalf. 
