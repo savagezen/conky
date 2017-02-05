@@ -19,7 +19,7 @@ TEXT
 ##################################
 
  ${uid_name 1000} @ ${nodename_short} for ${uptime_short}
- --------------------------- 
- /boot         ${fs_type /boot}  ${fs_used /boot}  (${fs_used_perc /boot}%)
- /             ${fs_type /}  ${fs_used /}  (${fs_used_perc /}%)
+ -------------------------------------------------------
+ /boot              ${fs_type /boot}  ${fs_used /boot}  (${fs_used_perc /boot}%)
+ /                     ${fs_type /}  ${fs_used /}  (${fs_used_perc /}%)
  /home/austin  ${fs_type /home/austin}  ${fs_used /home/austin}  (${fs_used_perc /home/austin}%)

@@ -16,12 +16,12 @@ temperature_unit fahrenheit
 TEXT
 ##################################
 
- Swap: ${swap} / ${swapmax} (${swapperc}%)
- Memory: ${mem} / ${memmax} (${memperc}%)
-  Free:     ${memfree}
-  Cached:   ${cached}
-  Buffered: ${buffers}
- ------------------------
+ Swap:       ${swap} / ${swapmax} (${swapperc}%)
+ Memory:  ${mem} / ${memmax} (${memperc}%)
+ Free:        ${memfree}
+ Cached:   ${cached}
+ Buffered: ${buffers}
+ ----------------------------------------------------
  ${top_mem name 1} ${top_mem pid 1} ${top_mem mem 1}%
  ${top_mem name 2} ${top_mem pid 2} ${top_mem mem 2}%
  ${top_mem name 3} ${top_mem pid 3} ${top_mem mem 3}%

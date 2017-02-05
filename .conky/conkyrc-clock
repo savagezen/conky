@@ -18,4 +18,4 @@ override_utf8_locale no
 TEXT
 ##################################
 
- ^ca(1,$HOME/scripts/popup_cal.sh)${time %H:%M} ${time %B %d}^ca()
+ ^ca(1,$HOME/scripts/popup_cal.sh)${time %a %d | %H:%M}^ca()

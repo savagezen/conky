@@ -25,4 +25,4 @@ ${execi 14400 checkupdates > /tmp/off.updates}
  ^ca(1,$HOME/scripts/popup_packages.sh)^i($HOME/.icons/dzen2/pacman.xbm) ${exec cat /tmp/off.updates | wc -l} / ${exec cat /tmp/aur.updates | wc -l}^ca() |#
  ^ca(1,$HOME/scripts/popup_sysinfo.sh)^i($HOME/.icons/dzen2/arch_10x10.xbm)^ca()#
  ^ca(1,$HOME/scripts/popup_network.sh)^i($HOME/.icons/dzen2/wireless5.xbm)^ca()#
- ^ca(1,$HOME/scripts/popup_battery.sh)${if_match ${battery_percent BATC} <= 10} ^fg(red)${blink ^i($HOME/.icons/dzen2/battery.xbm)}^fg(green)${else}^i($HOME/.icons/dzen2/battery.xbm)${endif}^ca()
+ ^ca(1,$HOME/scripts/popup_battery.sh)${if_match ${battery_percent BAT0} <= 10} ^fg(red)${blink ^i($HOME/.icons/dzen2/battery.xbm)}^fg(green)${else}^i($HOME/.icons/dzen2/battery.xbm)${endif}^ca()

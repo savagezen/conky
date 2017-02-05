@@ -18,6 +18,6 @@ override_utf8_locale no
 TEXT
 ##################################
 
-${battery BATC} 
-Remaining: ${battery_time BATC}
-${battery_bar BATC}
+${battery BAT0} 
+Remaining: ${battery_time BAT0}
+${battery_bar BAT0}

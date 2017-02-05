@@ -16,10 +16,10 @@ temperature_unit fahrenheit
 TEXT
 ##################################
 
- I/O Sched: ${ioscheduler mmcblk0}
- Usage:     ${cpu}% @ ${freq_g}GHz
- Temp:      ${acpitemp} 'F
- ------------------------
+ I/O Sched:  ${ioscheduler /dev/sda}
+ Usage:       ${cpu}% @ ${freq_g}GHz
+ Temp:        ${acpitemp} 'F
+ ----------------------------------------
  ${top name 1} ${top pid 1} ${top cpu 1}%
  ${top name 2} ${top pid 2} ${top cpu 2}%
  ${top name 3} ${top pid 3} ${top cpu 3}%

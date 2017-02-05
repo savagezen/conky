@@ -19,5 +19,4 @@ TEXT
 ##################################
 
  #
- ${mpd_status} ^i($HOME/.icons/dzen2/spkr_01.xbm)#
- ${mpd_artist} - ${mpd_title}
+ ^ca(1,$HOME/scripts/popup_music.sh)${mpd_status} ^i($HOME/.icons/dzen2/spkr_01.xbm) ${mpd_artist} - ${mpd_title}^ca()
