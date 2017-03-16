@@ -1,0 +1,23 @@
+out_to_x no
+out_to_console yes
+background no
+use_spacer none
+
+update_interval 5
+#  in seconds
+
+total_run_times 1
+#  0 = run forever
+
+use_spacer none
+#  right, left, none
+
+short_units yes
+override_utf8_locale no
+
+TEXT
+##################################
+
+${battery BAT0} 
+Remaining: ${battery_time BAT0}
+${battery_bar BAT0}

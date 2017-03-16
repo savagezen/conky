@@ -1,0 +1,28 @@
+out_to_x no
+out_to_console yes
+background no
+use_spacer none
+
+update_interval 5
+#  in seconds
+
+total_run_times 0
+#  0 = run forever
+
+use_spacer none
+#  right, left, none
+
+short_units yes
+override_utf8_locale no
+
+TEXT
+##################################
+ARTIST=execp cmus-remote -Q | grep artist | tail -c +12
+
+
+ #
+ ^ca(1,$HOME/.conky/popup_music.sh)${execp cmus-remote -Q | grep status | tail -c +8}# 
+ ^i($HOME/.icons/dzen2/spkr_01.xbm)#
+ ${execp cmus-remote -Q | grep artist | tail -c +12} - #
+ ${execp cmus-remote -Q | grep title | tail -c +11}#
+ ^ca()

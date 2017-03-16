@@ -1,0 +1,25 @@
+out_to_x no
+out_to_console yes
+background no
+use_spacer none
+
+update_interval 0.5
+#  in seconds
+
+total_run_times 1
+#  0 = run forever
+
+use_spacer none
+#  right, left, none
+
+short_units yes
+override_utf8_locale no
+
+TEXT
+##################################
+
+Network: ${wireless_essid}
+Quality: ${wireless_link_qual wlp3s0} / ${wireless_link_qual_max} (${wireless_link_qual_perc}%)
+wDwn: ${downspeed wlp3s0} / wUp: ${upspeed wlp3s0}
+eDwn: ${downspeed enp0s25} / eUp: ${upspeed enp0s25}
+Local IP: ${gw_ip}

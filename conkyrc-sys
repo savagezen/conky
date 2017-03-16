@@ -1,0 +1,25 @@
+out_to_x no
+out_to_console yes
+background no
+use_spacer none
+
+update_interval 60
+#  in seconds
+
+total_run_times 1
+#  0 = run forever
+
+use_spacer none
+#  right, left, none
+
+short_units yes
+override_utf8_locale no
+
+TEXT
+##################################
+
+ ${uid_name 1000} @ ${nodename_short} for ${uptime_short}
+ -------------------------------------------------------
+ /boot              ${fs_type /boot}  ${fs_used /boot}  (${fs_used_perc /boot}%)
+ /                     ${fs_type /}  ${fs_used /}  (${fs_used_perc /}%)
+ /home/austin  ${fs_type /home/austin}  ${fs_used /home/austin}  (${fs_used_perc /home/austin}%)
