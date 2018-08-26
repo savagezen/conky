@@ -3,7 +3,7 @@ out_to_console yes
 background no
 use_spacer none
 
-update_interval 5
+update_interval 60
 #  in seconds
 
 total_run_times 0

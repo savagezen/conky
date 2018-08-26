@@ -8,4 +8,4 @@ FONT=-misc-*-*-*-*--14-*-*-*-*-*-iso8859-1
 sleep 3 &&
 
 # main conky
-conky -c $HOME/.conky/conkyrc-main | dzen2 -e - -h '17' -w '610' -ta r -x '755' -y '0' -fg $FG -bg $BG -fn $FONT &
+conky -c $HOME/.conky/conkyrc-main | dzen2 -e - -h '19' -w '610' -ta r -x '755' -y '0' -fg $FG -bg $BG -fn $FONT &
