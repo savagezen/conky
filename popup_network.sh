@@ -9,6 +9,8 @@ CITY=$(cat $FILE | grep city | tr -d '\"' | tr -d ',')
 STATE=$(cat $FILE | grep region | tr -d '\"' | tr -d ',')
 LOC=$(cat $FILE | grep loc | tr -d '\"' | tr -d ',')
 ORG=$(cat $FILE | grep '\"org\"' | tr -d '/"')
+wMAC=$(cat /sys/class/net/wlp3s0/address)
+eMAC=$(cat /sys/class/net/enp0s25/address)
 
 (
  #Title
@@ -17,6 +19,8 @@ ORG=$(cat $FILE | grep '\"org\"' | tr -d '/"')
  echo "-------------------"
  conky -c $HOME/.conky/conkyrc-net
  echo "External IP: $EXIP"
+ echo "wMAC: $wMAC"
+ echo "eMAC: $eMAC"
  echo ""
  echo "$CITY"
  echo "$STATE"
