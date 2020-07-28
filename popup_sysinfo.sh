@@ -21,7 +21,7 @@ UPTIME=$( uptime | sed 's/.* up //' | sed 's/[0-9]* us.*//' | sed 's/ day, /d /'
  echo "  ^i($ICONS/term.xbm)  $SHELL"
  echo "  ^i($ICONS/arch_10x10.xbm)  $KERNEL ($BITS)"
  conky -c $HOME/.conky/conkyrc-sys
-) | dzen2 -p '5' -x "1095" -y "19" -w "270" -l "8" -sa 'l' -ta 'c' -fg $FG -bg $BG\
+) | dzen2 -p '5' -x "1330" -y "19" -w "270" -l "8" -sa 'l' -ta 'c' -fg $FG -bg $BG\
     -title-name 'popup_sysinfo' -e 'onstart=uncollapse;button1=exit;button3=exit'
 
 # "onstart=uncollapse" ensures that slave window is visible from start

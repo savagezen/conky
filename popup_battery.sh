@@ -9,7 +9,7 @@ BG='#222222'
  #The following lines go to slave window
  echo "------------"
  conky -c $HOME/.conky/conkyrc-bat
-) | dzen2 -p '5' -x "1165" -y "19" -w "200" -l "4" -sa 'c' -ta 'c' -fg $FG -bg $BG\
+) | dzen2 -p '5' -x "1400" -y "19" -w "200" -l "4" -sa 'c' -ta 'c' -fg $FG -bg $BG\
     -title-name 'popup_bat' -e 'onstart=uncollapse;button1=exit;button3=exit'
 
 # "onstart=uncollapse" ensures that slave window is visible from start.

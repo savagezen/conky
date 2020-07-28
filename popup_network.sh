@@ -27,7 +27,7 @@ eMAC=$(cat /sys/class/net/enp0s25/address)
  echo ""
  echo "$LOC"
  echo "$ORG"
-) | dzen2 -p '5' -x "980" -y "19" -w "385" -l "13" -sa 'c' -ta 'c' -fg $FG -bg $BG\
+) | dzen2 -p '5' -x "1220" -y "19" -w "385" -l "13" -sa 'c' -ta 'c' -fg $FG -bg $BG\
     -title-name 'popup_network' -e 'onstart=uncollapse;button1=exit;button3=exit'
 
 # "onstart=uncollapse" ensures that slave window is visible from start.

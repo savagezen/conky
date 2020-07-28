@@ -17,7 +17,7 @@ GOV=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
  echo " $CPU"
  echo " Governor:  $GOV"
  conky -c $HOME/.conky/conkyrc-cpu
-) | dzen2 -p '5' -x "1100" -y "19" -w "265" -l "12" -sa 'l' -ta 'c' -fg $FG -bg $BG\
+) | dzen2 -p '5' -x "1335" -y "19" -w "265" -l "12" -sa 'l' -ta 'c' -fg $FG -bg $BG\
     -title-name 'popup_cpu' -e 'onstart=uncollapse;button1=exit;button3=exit'
 
 # "onstart=uncollapse" ensures that slave window is visible from start
