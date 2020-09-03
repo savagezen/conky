@@ -1,21 +1,16 @@
-out_to_x no
-out_to_console yes
-background no
-use_spacer none
+conky.config = {
+  out_to_x=no,
+  out_to_console=yes,
+  background=no,
+  update_interval=60,
+  total_run_time=0,
+  use_spacer=none,
+  short_units=yes,
+  override_utf8_locale=no
+}
 
-update_interval 30
-#  in seconds
+conky.text = [[
 
-total_run_times 0
-#  0 = run forever
+^ca(1,$HOME/.conky/popup_cal.sh)${time %a %d, %H:%M}^ca()
 
-use_spacer none
-#  right, left, none
-
-short_units yes
-override_utf8_locale no
-
-TEXT
-##################################
-
- ^ca(1,$HOME/.conky/popup_cal.sh)${time %a %d, %H:%M}^ca()
+]]
